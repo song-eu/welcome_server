@@ -1,7 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-const cors = require('cors')
+const cors = require('cors');
+
+// routes 선언
+const visitOutpatientRouter = require('./routes/visit_outpatient');
 
 dotenv.config();
 
@@ -22,6 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
+
+app.use('/api/visitOut', visitOutpatientRouter);
 
 app.listen(PORT, function(){
     console.log(`Welcome Server is running on port ${PORT}`);
