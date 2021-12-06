@@ -1,12 +1,15 @@
 const oracledb = require('oracledb');
 const dbConnInfo = require('./config/config');
-oracledb.initOracleClient({libDir: '/Users/eunhyesong/oracle/instantclient_19_8'});
-//oracledb.initOracleClient({configDir: 'C:\oracle\instantclient_19_11'});
+//oracledb.initOracleClient({libDir: '/Users/eunhyesong/oracle/instantclient_19_8'});0
+//oracledb.initOracleClient({libDir: 'C:\\oracle\\instantclient_19_12'});
+//oracledb.initOracleClient({libDir: 'C:\oracle\instantclient_19_12'});
+
+
 //windows set up
 
 async function checkConnection() {
     try {
-    //console.log('dbconnInfo', dbConnInfo.dev)
+    console.log('dbconnInfo', dbConnInfo.dev)
       var connection = await oracledb.getConnection(dbConnInfo.dev);
       console.log('connected to database');
     } catch (err) {
