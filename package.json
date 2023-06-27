@@ -19,12 +19,13 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "moment": "^2.29.1",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
     "morgan": "^1.10.0",
     "node-oracledb": "^1.0.2",
-    "nodemon": "^2.0.12",
-    "oracledb": "^5.2.0"
+    "nodemon": "^2.0.22",
+    "oracledb": "^5.2.0",
+    "vertica-nodejs": "^1.0.3"
   },
   "proxy": "http://localhost:30003/"
 }

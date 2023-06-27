@@ -4,8 +4,10 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const checkConnection = require("./DBconnection");
+const checkVerticaConnection = require("./VDBConnection");
 // routes 선언
-const visitOutpatientRouter = require("./routes/visit_outpatient");
+// const visitOutpatientRouter = require("./routes/visit_outpatient");
+const verticaRouter = require("./routes/visit_outpatient_vertica");
 
 dotenv.config();
 
@@ -28,11 +30,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // '/' path message
 app.get("/", (req, res) => {
-  checkConnection();
+  // checkConnection();
+  checkVerticaConnection();
   res.send("Hello World");
 });
 
-app.use("/api/visitOut", visitOutpatientRouter);
+// app.use("/api/visitOut", visitOutpatientRouter);
+app.use("/verticaRouter", verticaRouter);
 
 app.listen(PORT, function () {
   console.log(`Welcome Server is running on port ${PORT}`);
